@@ -1,0 +1,6 @@
+# MedEd Robots Exclusion Protocol
+User-agent: *
+Allow: /
+
+# Canonical Sitemap Index for Google Search Console & Bing Webmaster
+Sitemap: https://borun.github.io/meded/sitemap.xml

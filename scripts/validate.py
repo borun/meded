@@ -210,14 +210,48 @@ def test_html_files():
 # 4. Check Root Platform Essentials
 # -------------------------------------------------------------
 def test_root_essentials():
-    print("\n\033[1m[4/4] Validating repository root essentials & compiled assets...\033[0m")
-    essentials = ["index.html", "README.md", "LICENSE", "assets/css/main.min.css"]
+    print("\n\033[1m[4/4] Validating repository root essentials, SEO assets & compiled assets...\033[0m")
+    essentials = ["index.html", "README.md", "LICENSE", "assets/css/main.min.css", "sitemap.xml", "robots.txt"]
     for item in essentials:
         path = os.path.join(ROOT_DIR, item)
         if os.path.exists(path) and os.path.getsize(path) > 0:
             log_pass(f"Essential file '{item}' is present and non-empty ({os.path.getsize(path)} bytes).")
         else:
-            log_error(f"Essential file '{item}' is missing or empty. Run 'npm run build:css' to compile.")
+            log_error(f"Essential file '{item}' is missing or empty.")
+
+    # Validate sitemap XML structure and URLs
+    sitemap_path = os.path.join(ROOT_DIR, "sitemap.xml")
+    if os.path.exists(sitemap_path):
+        try:
+            import xml.etree.ElementTree as ET
+            tree = ET.parse(sitemap_path)
+            root = tree.getroot()
+            urls = [elem.text for elem in root.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
+            log_pass(f"sitemap.xml is valid XML with {len(urls)} indexed URLs.")
+            
+            # Check topics from topics.json
+            with open(os.path.join(ROOT_DIR, "data/topics.json"), "r", encoding="utf-8") as f:
+                topics = json.load(f)
+            for t in topics:
+                if t.get("status") == "Active":
+                    topic_rel = t.get('path', '').replace('index.html', '').rstrip('/')
+                    expected_url = f"https://borun.github.io/meded/{topic_rel}/" if topic_rel else "https://borun.github.io/meded/"
+                    if expected_url in urls or f"{expected_url}index.html" in urls:
+                        log_pass(f"Sitemap indexes active course: '{t.get('title')}'")
+                    else:
+                        log_warning(f"Sitemap missing active course URL: '{expected_url}'")
+        except Exception as e:
+            log_error(f"Invalid sitemap.xml: {e}")
+
+    # Validate robots.txt references sitemap
+    robots_path = os.path.join(ROOT_DIR, "robots.txt")
+    if os.path.exists(robots_path):
+        with open(robots_path, "r", encoding="utf-8") as f:
+            robots_txt = f.read()
+        if "sitemap.xml" in robots_txt:
+            log_pass("robots.txt correctly declares Sitemap location.")
+        else:
+            log_error("robots.txt is missing 'Sitemap: ...' declaration.")
 
 # -------------------------------------------------------------
 # Main Runner

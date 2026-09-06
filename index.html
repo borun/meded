@@ -21,15 +21,63 @@
   <meta name="twitter:title" content="MedEd | Open Medical E-Learning Platform" />
   <meta name="twitter:description" content="Evidence-based medical education structured for deep & comfortable learning." />
 
-  <!-- Structured JSON-LD Schema.org Data for SEO -->
+    <!-- Structured JSON-LD Schema.org Data for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "MedEd",
-    "url": "https://borun.github.io/meded/",
-    "description": "Open-access medical education platform with structured video masterclasses and surgical protocols.",
-    "sameAs": ["https://github.com/borun/meded"]
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://borun.github.io/meded/#organization",
+        "name": "MedEd",
+        "url": "https://borun.github.io/meded/",
+        "logo": "https://borun.github.io/meded/assets/icon.png",
+        "description": "Open-access medical education platform featuring structured video masterclasses and precision surgical protocols.",
+        "sameAs": ["https://github.com/borun/meded"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://borun.github.io/meded/#website",
+        "url": "https://borun.github.io/meded/",
+        "name": "MedEd",
+        "publisher": { "@id": "https://borun.github.io/meded/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://borun.github.io/meded/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "MedEd Clinical Courses & Masterclasses",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "FOGSI-ICOG & ISAR Infertility Masterclass",
+            "url": "https://borun.github.io/meded/topics/fogsi-infertility-masterclass/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Infertility Masterclass by Dr. Jay Mehta",
+            "url": "https://borun.github.io/meded/topics/infertility-masterclass-dr-jay-mehta/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Obstetric Emergencies & Labor Ward Procedures",
+            "url": "https://borun.github.io/meded/topics/obstetrics-labor-ward-emergencies/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Total Abdominal Hysterectomy Operative Manual",
+            "url": "https://borun.github.io/meded/topics/total-abdominal-hysterectomy/"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
