@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MedEd | Open Medical E-Learning & Clinical Protocol Platform</title>
+  <title>MedEd | Open Medical Education & Postgraduate Clinical Protocols</title>
   
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Open-access, structured medical e-learning platform for healthcare professionals, residents, and medical students. High-yield video courses, surgical manuals, and precision clinical protocols." />
-  <meta name="keywords" content="medical education, infertility masterclass, laparoscopic surgery, total abdominal hysterectomy, obstetric emergencies, PPH, clinical protocols" />
-  <meta name="author" content="MedEd Open Platform" />
+    <!-- SEO Meta Tags -->
+  <meta name="description" content="Open-access medical education platform featuring structured postgraduate masterclasses in OB-GYN, reproductive medicine, operative surgery, and emergency obstetrics for medical students, residents (NEET-PG/DNB/MS/FCPS/MRCOG), and clinicians across South Asia and worldwide." />
+  <meta name="keywords" content="medical education, NEET PG OBGYN, DNB obstetrics, FCPS gynae, MRCOG exam preparation, FOGSI infertility course, Dr Jay Mehta masterclass, total abdominal hysterectomy operative technique, shoulder dystocia HELPERR protocol, B-Lynch suture, PPH stepwise devascularization, clinical pearls, medical students South Asia" />
+  <meta name="author" content="MedEd Open Clinical Learning Initiative" />
   <link rel="canonical" href="https://borun.github.io/meded/" />
 
   <!-- OpenGraph / Social Meta Tags -->
-  <meta property="og:title" content="MedEd | Open Medical E-Learning Platform" />
-  <meta property="og:description" content="Evidence-based medical education structured for deep & comfortable learning. Timestamped masterclasses and clinical protocols." />
+  <meta property="og:title" content="MedEd | Open Medical Education & Postgraduate Clinical Protocols" />
+  <meta property="og:description" content="Structured clinical masterclasses in Reproductive Medicine, Operative Gynecology, and Emergency Obstetrics. High-yield video modules and precision surgical pearls for residents and doctors." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://borun.github.io/meded/" />
   <meta property="og:site_name" content="MedEd" />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MedEd | Open Medical E-Learning Platform" />
-  <meta name="twitter:description" content="Evidence-based medical education structured for deep & comfortable learning." />
+  <meta name="twitter:title" content="MedEd | Open Medical Education & Postgraduate Clinical Protocols" />
+  <meta name="twitter:description" content="Structured clinical masterclasses in Reproductive Medicine, Operative Gynecology, and Emergency Obstetrics for medical students and clinicians." />
 
-    <!-- Structured JSON-LD Schema.org Data for SEO -->
+      <!-- Structured JSON-LD Schema.org Data for SEO (Google Search Essentials Compliant) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,8 +32,14 @@
         "@id": "https://borun.github.io/meded/#organization",
         "name": "MedEd",
         "url": "https://borun.github.io/meded/",
-        "logo": "https://borun.github.io/meded/assets/icon.png",
-        "description": "Open-access medical education platform featuring structured video masterclasses and precision surgical protocols.",
+        "description": "Open-access medical education initiative delivering precision clinical curriculum and operative surgical guides for healthcare trainees and professionals globally and across South Asia.",
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "South Asia" },
+          { "@type": "AdministrativeArea", "name": "India" },
+          { "@type": "AdministrativeArea", "name": "Bangladesh" },
+          { "@type": "AdministrativeArea", "name": "Pakistan" },
+          { "@type": "AdministrativeArea", "name": "Worldwide" }
+        ],
         "sameAs": ["https://github.com/borun/meded"]
       },
       {
@@ -49,31 +56,37 @@
       },
       {
         "@type": "ItemList",
-        "name": "MedEd Clinical Courses & Masterclasses",
+        "@id": "https://borun.github.io/meded/#courses",
+        "name": "Clinical Masterclasses & Operative Manuals",
+        "description": "Evidence-based postgraduate clinical courses designed for medical trainees, postgraduates, and practicing clinicians.",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "FOGSI-ICOG & ISAR Infertility Masterclass",
-            "url": "https://borun.github.io/meded/topics/fogsi-infertility-masterclass/"
+            "url": "https://borun.github.io/meded/topics/fogsi-infertility-masterclass/",
+            "description": "3-day structured certificate curriculum on reproductive endocrinology, semen analysis (WHO 6th Ed), IUI, and ART protocols."
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Infertility Masterclass by Dr. Jay Mehta",
-            "url": "https://borun.github.io/meded/topics/infertility-masterclass-dr-jay-mehta/"
+            "url": "https://borun.github.io/meded/topics/infertility-masterclass-dr-jay-mehta/",
+            "description": "Comprehensive 69-lecture course spanning 8 clinical phases of ovarian stimulation, AMH interpretation, thin endometrium, and endoscopy."
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Obstetric Emergencies & Labor Ward Procedures",
-            "url": "https://borun.github.io/meded/topics/obstetrics-labor-ward-emergencies/"
+            "url": "https://borun.github.io/meded/topics/obstetrics-labor-ward-emergencies/",
+            "description": "Emergency intrapartum training: Shoulder Dystocia HELPERR algorithm, Breech Delivery, Instrumental Delivery, B-Lynch Sutures, and PPH devascularization."
           },
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "Total Abdominal Hysterectomy Operative Manual",
-            "url": "https://borun.github.io/meded/topics/total-abdominal-hysterectomy/"
+            "name": "Total Abdominal Hysterectomy (TAH) Operative Manual",
+            "url": "https://borun.github.io/meded/topics/total-abdominal-hysterectomy/",
+            "description": "Evidence-based surgical manual featuring step-by-step clamp sequences, Center-to-Lateral bladder dissection, and retroperitoneal ureter tracing."
           }
         ]
       }
