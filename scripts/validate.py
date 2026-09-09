@@ -211,13 +211,20 @@ def test_html_files():
 # -------------------------------------------------------------
 def test_root_essentials():
     print("\n\033[1m[4/4] Validating repository root essentials, SEO assets & compiled assets...\033[0m")
-    essentials = ["index.html", "README.md", "LICENSE", "assets/css/main.min.css", "sitemap.xml", "robots.txt"]
+    essentials = ["index.html", "README.md", "LICENSE", "assets/css/main.min.css", "sitemap.xml", "sitemap.xsl", "robots.txt"]
     for item in essentials:
         path = os.path.join(ROOT_DIR, item)
         if os.path.exists(path) and os.path.getsize(path) > 0:
             log_pass(f"Essential file '{item}' is present and non-empty ({os.path.getsize(path)} bytes).")
         else:
             log_error(f"Essential file '{item}' is missing or empty.")
+
+    # Validate .nojekyll presence for raw GitHub Pages asset serving
+    nojekyll_path = os.path.join(ROOT_DIR, ".nojekyll")
+    if os.path.exists(nojekyll_path):
+        log_pass("'.nojekyll' flag is present (bypasses Jekyll processing).")
+    else:
+        log_warning("'.nojekyll' flag is missing.")
 
     # Validate sitemap XML structure and URLs
     sitemap_path = os.path.join(ROOT_DIR, "sitemap.xml")

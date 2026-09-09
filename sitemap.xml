@@ -1,47 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- MedEd Platform Home Hub -->
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://borun.github.io/meded/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- FOGSI-ICOG & ISAR Infertility Masterclass -->
   <url>
     <loc>https://borun.github.io/meded/topics/fogsi-infertility-masterclass/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Dr. Jay Mehta Infertility Masterclass -->
   <url>
     <loc>https://borun.github.io/meded/topics/infertility-masterclass-dr-jay-mehta/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Obstetric Emergencies & Labor Ward Procedures -->
   <url>
     <loc>https://borun.github.io/meded/topics/obstetrics-labor-ward-emergencies/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Total Abdominal Hysterectomy Operative Manual -->
   <url>
     <loc>https://borun.github.io/meded/topics/total-abdominal-hysterectomy/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
 </urlset>
